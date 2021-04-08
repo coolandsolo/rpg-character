@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ISkills,  SkillsRank } from 'src/classes/interfaces/Character/ICharacter';
+import { ISkills,  SkillsRank } from '../../classes/interfaces/Character/ICharacter';
 import { CharacterService } from '../character.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 

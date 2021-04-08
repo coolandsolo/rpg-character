@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import Character from 'src/classes/Character';
-import { IAttributes, ICombatAttributes, ICharacterState, ISkills } from 'src/classes/interfaces/Character/ICharacter';
+import Character from '../classes/Character';
+import { IAttributes, ICombatAttributes, ICharacterState, ISkills } from '../classes/interfaces/Character/ICharacter';
 
 @Injectable({
   providedIn: 'root'

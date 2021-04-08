@@ -3,7 +3,7 @@ import { CharacterService } from '../character.service';
 import { MatDialog } from '@angular/material/dialog';
 import { NameDialogComponent } from './name-dialog/name-dialog.component';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
-import { ISkills } from 'src/classes/interfaces/Character/ICharacter';
+import { ISkills } from '../../classes/interfaces/Character/ICharacter';
 
 @Component({
   selector: 'app-bio',
