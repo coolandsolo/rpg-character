@@ -1,0 +1,44 @@
+<mat-card class="skills-card">
+    <mat-card-header style="text-align: center; display:block;">
+        <mat-card-subtitle>Skills</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+        <mat-grid-list cols="3" class="main-container" gutterSize=20 rowHeight=40>
+            <mat-grid-tile [colspan]=1 [rowspan]=1 *ngFor="let item of skills | keyvalue">
+                <p style="margin: 0; width: 110px;">{{item.key}}</p>
+                <mat-chip-list>
+                    <mat-chip color="{{SkillColorTranslation[item.value]}}" selected>
+                        {{SkillRankTranslation[item.value]}}
+                    </mat-chip>
+                    <button mat-icon-button color="primary" aria-label="Click here to train this skill"
+                        matTooltip="Click here to train this skill" matTooltipPosition="right"
+                        (click)="train(item.key)">
+                        <mat-icon>refresh</mat-icon>
+                    </button>
+                </mat-chip-list>
+            </mat-grid-tile>
+        </mat-grid-list>
+    </mat-card-content>
+</mat-card>
+
+
+
+
+
+
+
+<!-- 
+
+<mat-card class="skills-card">
+    <mat-card-header style="text-align: center; display:block;">
+        <mat-card-subtitle>Skills</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+        <mat-grid-list cols="2" class="main-container" gutterSize=20  rowHeight=40>
+            <mat-grid-tile [colspan]=1 [rowspan]=1 *ngFor="let item of skills | keyvalue">
+                <p style="margin: 0; width: 110px;">{{item.key}}</p>
+                <mat-progress-bar mode="determinate" value={{item.value}}></mat-progress-bar>
+            </mat-grid-tile>
+        </mat-grid-list>
+    </mat-card-content>
+</mat-card> -->

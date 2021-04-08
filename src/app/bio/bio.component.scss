@@ -1,0 +1,18 @@
+.example-card {
+    max-width: 100%;
+  }
+  
+  .example-header-image {
+    background-size: cover;
+  }
+
+  .damage-count {
+    padding-right: 10px;
+    opacity: 0.7;
+    float: right;
+    margin: 20px 10px 0 0;
+    .mat-badge-content {
+      top: -3px;
+      right: -12px;
+  }
+}

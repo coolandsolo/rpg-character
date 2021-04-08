@@ -1,0 +1,11 @@
+<mat-card class="base-attribute-card">
+    <mat-card-header style="text-align: center; display:block;">
+        <mat-card-subtitle>Base Attributes</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+        <ng-container *ngFor="let item of attributes | keyvalue">
+            {{item.key}} <mat-slider #mySlider class="slider" thumbLabel max="{{attribute_max}}" value={{item.value}} min="0" step="1"  (change)="setBaseAttribute(item.key, mySlider.value)" >
+            </mat-slider>
+        </ng-container>
+    </mat-card-content>
+</mat-card>

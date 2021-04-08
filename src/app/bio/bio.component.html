@@ -1,0 +1,41 @@
+<mat-card class="example-card">
+    <mat-card-header>
+        <div mat-card-avatar class="example-header-image"
+            style="background-image: url('https://i.pravatar.cc/150?u={{name}}');"></div>
+        <mat-card-title>{{name}}</mat-card-title>
+        <mat-card-subtitle><button mat-button (click)="openDialog()" style="padding: 3px;height: 20px;line-height: 15px;">Set Name</button>
+        </mat-card-subtitle>
+        <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu"
+            style="position: absolute;right: 5px;top: 5px;">
+            <mat-icon>more_vert</mat-icon>
+        </button>
+        <mat-menu #menu="matMenu">
+            <a id="exportCharacter" [href]="exportURL" #exportCharacterElem download="CharacterSheet.json"
+                    style="display: none;">Hidden</a>
+            <button mat-menu-item (click)="exportCharacter()">
+                <mat-icon>save</mat-icon>
+                <span>Export Character</span>
+                <!-- <a [href]="exportURL" download="CharacterSheet.json"
+                    style="text-decoration: none; color: inherit;">Export Character</a> -->
+            </button>
+            <button mat-menu-item (click)="uploader.click()">
+                <mat-icon>upload</mat-icon>
+                <span>Import Character</span>
+            </button>
+            <input hidden type="file" #uploader (change)="importCharacter($event.target.files)" />
+        </mat-menu>
+
+    </mat-card-header>
+    <mat-card-content>
+        <img style="height: 200px;" mat-card-image
+            src="https://avatars.dicebear.com/api/human/{{name}}.svg?w=300&h=300&mood[]=surprised"
+            alt="Photo of a Shiba Inu">
+
+    </mat-card-content>
+    <mat-card-actions>
+        <button mat-raised-button color="primary" (click)="takeDamage()" type="button">Take Damage</button>
+        <button mat-raised-button color="warn" (click)="undoDamage()" type="button">Undo Damage</button>
+        <small matBadge="{{damage}}" matBadgeOverlap="true" matBadgeColor="accent" class="damage-count">Damage
+            Count: &nbsp; </small>
+    </mat-card-actions>
+</mat-card>

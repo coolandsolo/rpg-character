@@ -1,0 +1,13 @@
+<mat-card class="combat-attribute-card">
+    <mat-card-header style="text-align: center; display:block;">
+        <mat-card-subtitle>Combat Attributes</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+        <mat-grid-list cols="3" class="main-container" gutterSize=20 rowHeight=45>
+            <mat-grid-tile [colspan]=1 [rowspan]=1 *ngFor="let item of combatAttributes | keyvalue">
+                <p style="margin: 0; width: 75px;">{{item.key}}</p>
+                <mat-progress-bar mode="determinate" value={{item.value*4}}></mat-progress-bar>
+            </mat-grid-tile>
+        </mat-grid-list>
+    </mat-card-content>
+</mat-card>
